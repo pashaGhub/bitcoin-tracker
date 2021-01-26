@@ -1,0 +1,45 @@
+.currencies {
+  @include defaultContainer;
+  max-width: 50rem;
+
+  h2 {
+    @include title;
+  }
+
+  &__update-status {
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    line-height: 2rem;
+
+    &__updating {
+      color: $warning-color;
+    }
+
+    &__up-to-date {
+      color: $success-color;
+    }
+
+    &__error {
+      color: $error-color;
+    }
+  }
+
+  &__table-error {
+    filter: blur(0.2rem);
+  }
+
+  table {
+    width: 100%;
+    text-align: center;
+    th {
+      background: $table-title-color;
+      height: 2rem;
+      color: $light-font;
+    }
+
+    td {
+      background: $table-info-color;
+    }
+  }
+}

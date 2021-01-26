@@ -1,0 +1,11 @@
+//global css
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./global.scss";
+
+//compotents css
+@import "../components/CustomInput/CustomInput.scss";
+@import "../components/Button/Button.scss";
+@import "../components/Header/Header.scss";
+@import "../pages/Currencies/Currencies.scss";
+@import "../pages/Analysis/Analysis.scss";

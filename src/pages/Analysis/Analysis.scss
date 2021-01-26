@@ -1,0 +1,20 @@
+.analysis {
+  @include defaultContainer;
+
+  &__search {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__results {
+    padding-top: 1rem;
+    h2 {
+      @include title;
+    }
+
+    div {
+      margin-bottom: 2rem;
+    }
+  }
+}

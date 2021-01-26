@@ -1,0 +1,11 @@
+@mixin defaultContainer {
+  max-width: $max-width;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+@mixin title {
+  color: $ash-color;
+  font-weight: 200;
+}

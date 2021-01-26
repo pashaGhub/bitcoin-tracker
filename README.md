@@ -4,7 +4,7 @@ This is Bitcoin live price tracker and Webpage analysis app.<br />
 <br/>
 App contains two pages:<br/>
 "/currencies" - shows current Bitcoin EUR, GPB and USD prices and updates info every 10 sec.<br/>
-"/analysis" - analize the webpage by given url and provide info of: analized url, all unique tags, the most commonly used tag.<br/>
+"/analysis" - analize the webpage by provided by user url and return info of: analized url, all unique tags, the most commonly used tag.<br/>
 
 ## Available Scripts
 

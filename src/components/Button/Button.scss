@@ -1,0 +1,17 @@
+.custom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  height: 3rem;
+  font-size: 1rem;
+  background: $primary-color;
+  color: $light-font;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+
+  &:hover {
+    background: $primary-hover-color;
+  }
+}

@@ -1,0 +1,33 @@
+.header {
+  height: 4rem;
+  line-height: 4rem;
+  background: $header-color;
+  color: $light-font;
+  box-shadow: $default-box-shadow;
+
+  &__container {
+    @include defaultContainer;
+    display: flex;
+    justify-content: space-between;
+    margin-top: unset;
+
+    &__navlink {
+      text-decoration: none;
+      color: $light-font;
+      padding: 0 1rem;
+      letter-spacing: 1px;
+      height: 4rem;
+      line-height: 4rem;
+      transition: all 0.3s;
+
+      &:hover,
+      &-active {
+        color: #adadad;
+      }
+
+      &-active {
+        cursor: default;
+      }
+    }
+  }
+}
