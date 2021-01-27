@@ -18,16 +18,19 @@ const Currencies: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-      const response = await getCurrencies();
-      if (response.error) {
+      try {
+        setError(false);
+        setLoading(true);
+        const response = await getCurrencies();
+
+        const data = { bpi: response.bpi, updated: response.time.updated };
+        dispatch(updateCurrencies(data));
+
+        setLoading(false);
+      } catch (error) {
         setLoading(false);
         setError(true);
       }
-      const data = { bpi: response.bpi, updated: response.time.updated };
-      dispatch(updateCurrencies(data));
-
-      setLoading(false);
     };
     fetchData();
     const id = setInterval(() => {
@@ -44,12 +47,20 @@ const Currencies: React.FC = () => {
         <span>Last update: {updated ? new Date(updated).toString() : ""}</span>
         <span>
           {loading && (
-            <span className="currencies__update-status__updating">
+            <span
+              data-testid="loading"
+              className="currencies__update-status__updating"
+            >
               Updating...
             </span>
           )}
           {error && (
-            <span className="currencies__update-status__error">Error</span>
+            <span
+              data-testid="error"
+              className="currencies__update-status__error"
+            >
+              Error
+            </span>
           )}
           {!loading && !error && (
             <span className="currencies__update-status__up-to-date">

@@ -8,15 +8,11 @@ export const getCurrencies = async () => {
     );
 
     if (!response.ok) {
-      return {
-        error: true,
-        status: response.status,
-        message: response.statusText,
-      };
+      throw new Error(response.statusText);
     }
 
     const data = await response.json();
-    return data;
+    return { ...data, error: false };
   } catch (e) {
     return { error: true, message: e };
   }
