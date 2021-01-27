@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { IAllReducers } from "../../reducers";
 import { ITag, IAnalysisReducer } from "../../reducers/analysisReducer";
 import { updateAnalysis } from "../../actions/analysisActions";
-import { getPageInfo } from "../../services/analysisServices";
+import { getPageInfo, proxyCORS } from "../../services/analysisServices";
 
 import CustomInput from "../../components/CustomInput/CustomInput";
 import Button from "../../components/Button/Button";
@@ -47,8 +47,10 @@ const Analysis: React.FC = () => {
       )[0];
 
       // set analysis state structure
+      let formatedUrl = response.responseURL.split(proxyCORS).join(""); //remove proxyCORS from analized URL
+
       const stateData: IAnalysisReducer = {
-        analizedUrl: response.responseURL,
+        analizedUrl: formatedUrl,
         uniqueTags: tags,
         mostCommonTag: commonTag.name,
       };
